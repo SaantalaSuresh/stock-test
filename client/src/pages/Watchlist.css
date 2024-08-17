@@ -1,0 +1,44 @@
+.watchlist-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .watchlist h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .watchlist {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .watchlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .stock-info {
+    flex-grow: 1;
+  }
+  
+  .remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .remove-button:hover {
+    background-color: #c0392b;
+  }
+  
