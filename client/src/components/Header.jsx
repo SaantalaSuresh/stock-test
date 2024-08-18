@@ -1,36 +1,4 @@
-// import { Link } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
 
-// export default function Header() {
-//   const { currentUser } = useSelector((state) => state.user);
-//   return (
-//     <div className='bg-slate-200'>
-//       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
-//         <Link to='/'>
-//           <h1 className='font-bold'>Auth App</h1>
-//         </Link>
-//         <ul className='flex gap-4'>
-//           <Link to='/'>
-//             <li>Home</li>
-//           </Link>
-//           {/* <Link to='/watchlist'>
-//             <li>Watchlist</li>
-//           </Link> */}
-//           <Link to='/about'>
-//             <li>About</li>
-//           </Link>
-//           <Link to='/profile'>
-//             {currentUser ? (
-//               <img src={currentUser.profilePicture} alt='profile' className='h-7 w-7 rounded-full object-cover' />
-//             ) : (
-//               <li>Sign In</li>
-//             )}
-//           </Link>
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// }
 
 
 import { Link } from 'react-router-dom';
@@ -38,35 +6,53 @@ import { useSelector } from 'react-redux';
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
+
   return (
-    <header className="bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg">
-      <div className="flex justify-between items-center max-w-6xl mx-auto py-4 px-6">
-        <Link to="/" className="text-white font-bold text-2xl">
-          Auth App
+    <div className='bg-slate-100 shadow-md'>
+      <div className='flex justify-between items-center max-w-6xl mx-auto p-4'>
+        <Link to='/'>
+          <h1 className='text-2xl font-extrabold text-blue-600 tracking-wide'>Stock </h1>
         </Link>
-        <nav className="flex gap-6">
-          <Link to="/" className="text-white hover:text-gray-300 transition duration-300">
-            Home
-          </Link>
-          {/* <Link to='/watchlist'>
-            <li>Watchlist</li>
-          </Link> */}
-          <Link to="/about" className="text-white hover:text-gray-300 transition duration-300">
-            About
-          </Link>
-          <Link to="/profile" className="flex items-center">
-            {currentUser ? (
-              <img
-                src={currentUser.profilePicture}
-                alt="profile"
-                className="h-8 w-8 rounded-full object-cover border-2 border-white shadow-md"
-              />
-            ) : (
-              <span className="text-white hover:text-gray-300 transition duration-300">Sign In</span>
-            )}
-          </Link>
-        </nav>
+        <ul className='flex gap-6 items-center'>
+          <li>
+            <Link
+              to='/'
+              className='text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200'
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/about'
+              className='text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200'
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/profile'
+              className='text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200 flex items-center gap-2'
+            >
+              {currentUser ? (
+                <div className='flex items-center gap-2'>
+                  <img
+                    src={currentUser.profilePicture}
+                    alt='profile'
+                    className='h-8 w-8 rounded-full object-cover border-2 border-blue-600'
+                  />
+                  <span className='text-sm font-semibold text-gray-900'>
+                    {currentUser.name}
+                  </span>
+                </div>
+              ) : (
+                <span>Sign In</span>
+              )}
+            </Link>
+          </li>
+        </ul>
       </div>
-    </header>
+    </div>
   );
 }
